@@ -1,21 +1,34 @@
+var editPageSelectors = ['@nameEntry', '@phoneEntry', '@emailEntry', '@titleEntry']
 var commands = {
-    clearSet: function(selector, text){
-    this.clearValue(selector)
-    this.setValue(selector, text)
+    clearSet: function (selector, text) {
+        this.clearValue(selector)
+        this.setValue(selector, text)
 
-    return this
-    }
+        return this
+    },
+    // clearSetEmployee: function (info) {
+    //     Object.keys(info).forEach(function (value, index) {
+    //         commands.clearSet(editPageSelectors[index], info[value])
+    //     })
+
+    //     return this
+    // },
+    // verifyEmployee: function (info) {
+    //     Object.keys(info).forEach(function (value, index) {
+    //         this.verify.containsText(editPageSelectors[index], info[value])
+    //     })
+    // }
 }
 module.exports = {
-    commands:[commands],
+    commands: [commands],
     url: 'https://devmountain-qa.github.io/employee-manager-v2/build/index.html',
     elements: {
         lastEmployee: {
-            selector:'//li[last()-1]',
-            locateStrategy:'xpath'
+            selector: '//li[last()-1]',
+            locateStrategy: 'xpath'
         },
         firstEmployee: {
-            selector:'//li[2]',
+            selector: '//li[2]',
             locateStrategy: 'xpath'
         },
         saveBtn: 'button.confirmationButton',
